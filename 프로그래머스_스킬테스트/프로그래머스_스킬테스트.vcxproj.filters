@@ -30,5 +30,8 @@
     <ClCompile Include="암호화기법.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="전화번호 목록.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
