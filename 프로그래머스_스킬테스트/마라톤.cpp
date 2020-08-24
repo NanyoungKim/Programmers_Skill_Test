@@ -13,23 +13,30 @@ string solution(vector<string> participant, vector<string> completion) {
 	unordered_multimap<string, int> newparticipant;
 
 	for (int i = 0; i < participant.size(); i++) {
-		newparticipant.insert(pair<string, bool>(participant[i], false));
-	}
 
+		if (newparticipant.find(participant[i]) == newparticipant.end()) {
+			newparticipant.insert(pair<string, int>(participant[i], 1));
+
+		}
+		else {
+			newparticipant.find(participant[i])->second += 1;
+
+
+		}
+
+	}
+	for (it = newparticipant.begin(); it != newparticipant.end(); it++) {
+
+		cout << it->first << " " << it->second << endl;
+	}
 
 	
 	for (int i = 0; i < completion.size(); i++) {
 
 		chk = newparticipant.find(completion[i]);
 
-		if (chk->second == 0) {
-			chk->second += 1;	//방문했다고 체크
-			cout << "방문된 곳: " << chk->first << " ";
-
-		}
-		else {
-			
-		}
+			chk->second -= 1;
+		
 	}
 	cout << endl;
 
@@ -40,7 +47,7 @@ string solution(vector<string> participant, vector<string> completion) {
 
 	for (it = newparticipant.begin(); it != newparticipant.end(); it++) {
 
-		if (it->second == false) {
+		if (it->second == 1) {
 			
 			answer = it->first;
 		}
