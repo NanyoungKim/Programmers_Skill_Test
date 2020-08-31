@@ -7,7 +7,7 @@ bool solution(string s)
 {
 	bool answer = true;
 	int cnt = 100000;
-	stack<int> stk;
+	stack<char> stk;
 
 	int strLen = s.length();
 
@@ -15,25 +15,38 @@ bool solution(string s)
 
 	for (int i = 0; i < strLen; i++) {
 
-		if (stk.size() != 0) {
-			if (str[i] == '(') {
-				stk.push(1);
-			}
-			else {
-				stk.pop();
-			}
+
+		if (str[i] == '(') {
+			stk.push('(');
+
 		}
 		else {
-			return false;
+
+			if (stk.size() == 0) {
+				return false;
+			}
+			else {
+				if (stk.top() == '(') {
+					stk.pop();
+				}
+				else {
+					stk.push(')');
+				}
+			}
+
 		}
-
-		
-
-
-		
 	}
 
-	
+
+
+	if (stk.size() == 0) {
+		answer = true;
+	}
+
+	else {
+		answer = false;
+	}
+
 
 
 
@@ -43,7 +56,7 @@ bool solution(string s)
 
 int main() {
 
-	string s = "(()()";
+	string s = "(())()";
 
 	cout << solution(s);
 
