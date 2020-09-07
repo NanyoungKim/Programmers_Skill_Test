@@ -54,5 +54,11 @@
     <ClCompile Include="최소스코빌지수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="최소공배수2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="조이스틱.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
