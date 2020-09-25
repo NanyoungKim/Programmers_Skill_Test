@@ -24,5 +24,11 @@
     <ClCompile Include="완전탐색_모의고사.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="탐욕법_조이스틱.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="탐욕법_조이스틱2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

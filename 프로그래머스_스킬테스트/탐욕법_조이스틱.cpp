@@ -37,8 +37,6 @@ int solution(string name) {
 		
 		for (int i = strLen - 1; i > 1; i--) {
 
-		
-			
 			right = str[i] - 'A';
 			left = 'Z' + 1 - str[i];
 
@@ -66,7 +64,7 @@ int solution(string name) {
 
 int main() {
 
-	string name = "AAAA";
+	string name = "CCAAC";
 	cout << solution(name);
 
 	return 0;
