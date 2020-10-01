@@ -42,5 +42,8 @@
     <ClCompile Include="동적계획법_N으로표현.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DFSBFS_타겟넘버.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
