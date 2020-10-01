@@ -5,64 +5,20 @@
 using namespace std;
 
 int N = 0;
-int ans = 0;
-bool chkGroup = false;
+int *checked;
 
-int res = 0;
-int Min;
-vector<int> resVec;
+void dfs(vector<vector<int>> computers,int start,  int n) {
 
-void dfs(vector<vector<int>> computers, int cnt, int row, int col, int ans) {
+	checked[start] = 0;	//방문했음을 표시
 
+	for (int i = 0; i < n; i++) {			//i는 col 을 의미
 
-	
-	if (cnt==(N-1)) {
-	
-		resVec.push_back(ans);
-		return;
-	}
-
-	if (count(computers[row].begin(), computers[row].end(), 1) == 1) {	//자기자신만 1이면 바로 다음줄로
-		ans++;
-		chkGroup = false;
-		dfs(computers, cnt+1, row + 1, 0, ans);
-	}
-
-
-
-
-	if (col > N - 1) {
-		
-		
-			chkGroup = false;
-			dfs(computers, cnt, row + 1, 0, ans);
-		
-		
-
-		
-	}
-
-
-	if (row != col) {
-		if (computers[row][col] == 1 ) {
-
-
-			if (chkGroup == false) ans++;
-
-			chkGroup = true;
-			dfs(computers, cnt + 1, col, row + 1,ans);
-		}
-		else {
-			dfs(computers, cnt, row, col + 1, ans);
+		if (checked[i] == 1 && computers[start][i] == 1) {	//방문 안한 컴퓨터인데 연결됐으면
+			dfs(computers, i, n);							//그 컴퓨터랑 연결된 컴퓨터 바로 탐색 : col 이 row 로 감
 		}
 	}
-	else {		//자기자신은 그냥 한칸 오른쪽으로 이동
-		dfs(computers, cnt, row, col + 1, ans);
-	}
-
 
 }
-
 
 
 
@@ -70,13 +26,23 @@ int solution(int n, vector<vector<int>> computers) {
 	int answer = 0;
 
 	N = n;
-	Min = n;
-	dfs(computers, 1, 0, 0,0);
+	checked = new int[n];
 
-	sort(resVec.begin(), resVec.end());
+	for (int i = 0; i < n; i++) {
+		checked[i] = 1;					//방문 안 된곳은 1로 표시
+	}
 
-	answer = resVec[0];
-	cout << "answer : " << answer << endl;
+	for (int i = 0; i < n; i++) {
+
+		if (checked[i] == 0) {	//이미 방문했으면
+			continue;
+		}
+		else {
+			answer++;
+			dfs(computers, i, n);			//i는 row를 의미  
+		}
+
+	}
 
 	return answer;
 }
