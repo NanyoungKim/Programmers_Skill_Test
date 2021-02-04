@@ -63,5 +63,8 @@
     <ClCompile Include="2021카카오블라인드_메뉴리뉴얼.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2019카카오겨울인턴십_크레인인형뽑기게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
