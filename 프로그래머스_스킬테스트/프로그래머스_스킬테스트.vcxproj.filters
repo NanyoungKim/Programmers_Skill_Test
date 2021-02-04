@@ -51,5 +51,17 @@
     <ClCompile Include="NHN1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="탐욕법_섬연결하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2021카카오블라인드_신규아이디추천.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2021카카오블라인드_메뉴리뉴얼.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
